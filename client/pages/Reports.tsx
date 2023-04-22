@@ -14,7 +14,7 @@ const Page = () => {
                     <ul className="mt-4">
                         {
                             ReportLinks.map(e => (
-                                <li className="mb-4 ml-5">
+                                <li key={e.id} className="mb-4 ml-5">
                                     <Link href="/reports/sales">
                                         <div className="text-blue-500 hover:text-blue-700 flex items-center gap-2">
                                             <TbReportMedical />

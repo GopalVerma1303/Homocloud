@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { ReportLinks } from '../assets/ReportLinks';
-import ChartLinks from '../assets/ChartLinks';
-import { TbReportMedical } from "react-icons/tb";
+import { TbReportMedical, TbTable } from "react-icons/tb";
+import { BsGraphUp } from "react-icons/bs";
+import { GiHistogram } from "react-icons/gi";
+import { AiOutlinePieChart } from "react-icons/ai";
 
 
 const Page = () => {
@@ -26,18 +28,38 @@ const Page = () => {
                 </div>
                 <div className="w-[200px] h-screen sticky top-[80px] border-r-2 bg-slate-50">
                     <ul className="mt-4">
-                        {
-                            ChartLinks.map(e => (
-                                <li className="mb-4 ml-5">
-                                    <Link href="/reports/sales">
-                                        <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
-                                            <e.Icon />
-                                            <div>{e.name}</div>
-                                        </div>
-                                    </Link>
-                                </li>
-                            ))
-                        }
+                        <li className="mb-4 ml-5">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <TbTable />
+                                    <div>Tables</div>
+                                </div>
+                            </Link>
+                        </li>
+                        <li className="mb-4 ml-5">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <BsGraphUp />
+                                    <div>Graphs</div>
+                                </div>
+                            </Link>
+                        </li>
+                        <li className="mb-4 ml-5">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <GiHistogram />
+                                    <div>Histogram</div>
+                                </div>
+                            </Link>
+                        </li>
+                        <li className="mb-4 ml-5">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <AiOutlinePieChart />
+                                    <div>Pie Chart</div>
+                                </div>
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>

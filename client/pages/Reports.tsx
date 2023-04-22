@@ -10,11 +10,11 @@ const Page = () => {
     return (
         <div className="flex">
             <div className='flex'>
-                <div className="w-[200px] h-screen sticky top-[80px] border-r-2 bg-slate-50">
+                <div className="w-[200px] h-screen sticky top-[65px] border-r-2 bg-slate-50">
                     <ul className="mt-4">
                         {
                             ReportLinks.map(e => (
-                                <li key={e.id} className="mb-4 ml-5">
+                                <li key={e.id} className="border-b-2 py-2 pl-3">
                                     <Link href="/reports/sales">
                                         <div className="text-blue-500 hover:text-blue-700 flex items-center gap-2">
                                             <TbReportMedical />
@@ -26,9 +26,9 @@ const Page = () => {
                         }
                     </ul>
                 </div>
-                <div className="w-[200px] h-screen sticky top-[80px] border-r-2 bg-slate-50">
+                <div className="w-[200px] h-screen sticky top-[65px] border-r-2 bg-slate-50">
                     <ul className="mt-4">
-                        <li className="mb-4 ml-5">
+                        <li className="border-b-2 py-2 pl-3">
                             <Link href="/reports/sales">
                                 <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
                                     <TbTable />
@@ -36,7 +36,7 @@ const Page = () => {
                                 </div>
                             </Link>
                         </li>
-                        <li className="mb-4 ml-5">
+                        <li className="border-b-2 py-2 pl-3">
                             <Link href="/reports/sales">
                                 <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
                                     <BsGraphUp />
@@ -44,7 +44,7 @@ const Page = () => {
                                 </div>
                             </Link>
                         </li>
-                        <li className="mb-4 ml-5">
+                        <li className="border-b-2 py-2 pl-3">
                             <Link href="/reports/sales">
                                 <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
                                     <GiHistogram />
@@ -52,7 +52,7 @@ const Page = () => {
                                 </div>
                             </Link>
                         </li>
-                        <li className="mb-4 ml-5">
+                        <li className="border-b-2 py-2 pl-3">
                             <Link href="/reports/sales">
                                 <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
                                     <AiOutlinePieChart />

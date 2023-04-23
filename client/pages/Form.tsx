@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -28,7 +29,7 @@ const Form = () => {
         console.log(formData)
         e.preventDefault();
         try {
-            const response = await axios.post('/api/patient', formData);
+            const response = await axios.post('http://localhost:5000/', formData);
             console.log(response.data);
             // Handle success case
         } catch (error) {

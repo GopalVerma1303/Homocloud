@@ -1,6 +1,16 @@
-import Link from 'next/link'
-
+import Link from 'next/link';
+import { auth } from '../firebase';
+import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 const Navbar = () => {
+    const provider=new GoogleAuthProvider();
+    const signInWithGoogle=()=>{
+      signInWithPopup(auth,provider).then((result)=>{
+        console.log(result);
+        
+      }).catch((err)=>{
+        console.log(err);
+      })
+    }
     return (
         <nav className="fixed top-0 z-10 w-full flex items-center justify-between flex-wrap bg-gray-800 p-6">
             <div className="flex items-center flex-shrink-0 text-white mr-6 hover:cursor-pointer">
@@ -23,9 +33,9 @@ const Navbar = () => {
                         Reports
                     </div>
                 </Link>
-                <Link href="/Signin">
-                    <div className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0">Sign In</div>
-                </Link>
+              
+                    <div className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-800 hover:bg-white mt-4 lg:mt-0"><button onClick={()=>{signInWithGoogle()}}>Sign In</button></div>
+               
             </div>
         </nav>
     )

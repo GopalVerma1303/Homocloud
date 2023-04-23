@@ -10,8 +10,8 @@ const Page = () => {
     return (
         <div className="flex">
             <div className='flex'>
-                <div className="w-[200px] h-screen sticky top-[65px] border-r-2 bg-slate-50">
-                    <ul className="mt-4">
+                <div className="w-[200px] h-screen sticky top-[65px] border-r-2 bg-slate-50     overflow-y-scroll">
+                    <ul className="mt-4 ">
                         {
                             ReportLinks.map(e => (
                                 <li key={e.id} className="border-b-2 py-2 pl-3">

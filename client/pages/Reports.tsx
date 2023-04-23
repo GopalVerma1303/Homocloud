@@ -1,43 +1,63 @@
 import Link from 'next/link';
+import { ReportLinks } from '../assets/ReportLinks';
+import { TbReportMedical, TbTable } from "react-icons/tb";
+import { BsGraphUp } from "react-icons/bs";
+import { GiHistogram } from "react-icons/gi";
+import { AiOutlinePieChart } from "react-icons/ai";
+
 
 const Page = () => {
     return (
         <div className="flex">
             <div className='flex'>
-                <div className="w-[200px] bg-gray-100 h-screen sticky top-[80px]">
-                    <ul className="mt-4">
-                        <li className="mb-4">
-                            <Link href="/reports/sales">
-                                <div className="text-blue-500 hover:text-blue-700">Sales Report</div>
-                            </Link>
-                        </li>
-                        <li className="mb-4">
-                            <Link href="/reports/expenses">
-                                <div className="text-blue-500 hover:text-blue-700">Expenses Report</div>
-                            </Link>
-                        </li>
-                        <li className="mb-4">
-                            <Link href="/reports/profits">
-                                <div className="text-blue-500 hover:text-blue-700">Profits Report</div>
-                            </Link>
-                        </li>
+                <div className="w-[200px] h-screen sticky top-[65px] border-r-2 bg-slate-50     overflow-y-scroll">
+                    <ul className="mt-4 ">
+                        {
+                            ReportLinks.map(e => (
+                                <li key={e.id} className="border-b-2 py-2 pl-3">
+                                    <Link href="/reports/sales">
+                                        <div className="text-blue-500 hover:text-blue-700 flex items-center gap-2">
+                                            <TbReportMedical />
+                                            <div>{e.name}</div>
+                                        </div>
+                                    </Link>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
-                <div className="w-[200px] bg-gray-100 h-screen sticky top-[80px]">
+                <div className="w-[200px] h-screen sticky top-[65px] border-r-2 bg-slate-50">
                     <ul className="mt-4">
-                        <li className="mb-4">
+                        <li className="border-b-2 py-2 pl-3">
                             <Link href="/reports/sales">
-                                <div className="text-blue-500 hover:text-blue-700">Sales Report</div>
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <TbTable />
+                                    <div>Tables</div>
+                                </div>
                             </Link>
                         </li>
-                        <li className="mb-4">
-                            <Link href="/reports/expenses">
-                                <div className="text-blue-500 hover:text-blue-700">Expenses Report</div>
+                        <li className="border-b-2 py-2 pl-3">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <BsGraphUp />
+                                    <div>Graphs</div>
+                                </div>
                             </Link>
                         </li>
-                        <li className="mb-4">
-                            <Link href="/reports/profits">
-                                <div className="text-blue-500 hover:text-blue-700">Profits Report</div>
+                        <li className="border-b-2 py-2 pl-3">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <GiHistogram />
+                                    <div>Histogram</div>
+                                </div>
+                            </Link>
+                        </li>
+                        <li className="border-b-2 py-2 pl-3">
+                            <Link href="/reports/sales">
+                                <div className='flex items-center text-blue-500 hover:text-blue-700 gap-2'>
+                                    <AiOutlinePieChart />
+                                    <div>Pie Chart</div>
+                                </div>
                             </Link>
                         </li>
                     </ul>
